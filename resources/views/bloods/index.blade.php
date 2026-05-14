@@ -41,14 +41,15 @@
                             </td>
                             <td class="px-6 py-4 text-sm text-gray-700">{{ $b->bags }}</td>
                             <td class="px-6 py-4 text-sm">
-                                @if($b->status === 'available')
-                                    <span class="px-2 py-1 text-xs font-semibold rounded-full bg-green-100 text-green-700">Available</span>
-                                @elseif($b->status === 'used')
-                                    <span class="px-2 py-1 text-xs font-semibold rounded-full bg-blue-100 text-blue-700">Used</span>
-                                @else
-                                    <span class="px-2 py-1 text-xs font-semibold rounded-full bg-gray-100 text-gray-600">Expired</span>
-                                @endif
-                            </td>
+                                <td class="px-6 py-4 text-sm">
+                                    @if($b->status === 'available')
+                                        <span class="px-2 py-1 text-xs font-semibold text-green-700">Available</span>
+                                    @elseif($b->status === 'used')
+                                        <span class="px-2 py-1 text-xs font-semibold text-blue-700">Used</span>
+                                    @else
+                                        <span class="px-2 py-1 text-xs font-semibold text-gray-600">Expired</span>
+                                    @endif
+                                </td>
                             <td class="px-6 py-4 text-sm text-gray-700">{{ $b->donation_date }}</td>
                             <td class="px-6 py-4 text-right text-sm space-x-2">
                                 <a href="{{ route('bloods.edit', $b) }}"
